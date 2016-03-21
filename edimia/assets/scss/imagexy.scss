@@ -1,0 +1,192 @@
+.number-image-holder {
+    &.position-coins {
+        >img {
+            position:absolute;
+        }
+        &.value1 {
+            >img:nth-child(1) {
+                left: 111px; top: 51px;
+            }
+        }
+        &.value2 {
+            >img:nth-child(1) {
+                left: 90px; top: 75px;
+            }
+            >img:nth-child(2) {
+                left: 140px; top: 40px;
+            }
+        }
+        &.value3 {
+            >img:nth-child(1) {
+                left: 101px; top: 35px;
+            }
+            >img:nth-child(2) {
+                left: 140px; top: 65px;
+            }
+            >img:nth-child(3) {
+                left: 92px; top: 82px;
+            }
+        }
+        &.value4 {
+            >img:nth-child(1) {
+                left: 101px; top: 35px;
+            }
+            >img:nth-child(2) {
+                left: 140px; top: 65px;
+            }
+            >img:nth-child(3) {
+                left: 92px; top: 82px;
+            }
+            >img:nth-child(4) {
+                left: 147px; top: 18px;
+            }
+        }
+        &.value5 {
+            >img:nth-child(1) {
+                left: 72px; top: 28px;
+            }
+            >img:nth-child(2) {
+                left: 150px; top: 28px;
+            }
+            >img:nth-child(3) {
+                left: 72px; top: 75px;
+            }
+            >img:nth-child(4) {
+                left: 150px; top: 75px;
+            }
+            >img:nth-child(5) {
+                left: 112px; top: 51px;
+            }
+        }
+        &.value6 {
+            >img:nth-child(1) {
+                left: 15%; top: 25%;
+            }
+            >img:nth-child(2) {
+                left: 50%; top: 25%;
+            }
+            >img:nth-child(3) {
+                left: 85%; top: 25%;
+            }
+            >img:nth-child(4) {
+                left: 15%; top: 75%;
+            }
+            >img:nth-child(5) {
+                left: 50%; top: 75%;
+            }
+            >img:nth-child(6) {
+                left: 85%; top: 75%;
+            }
+        }
+        &.value7 {
+            >img:nth-child(1) {
+                left: 15%; top: 25%;
+            }
+            >img:nth-child(2) {
+                left: 50%; top: 25%;
+            }
+            >img:nth-child(3) {
+                left: 85%; top: 25%;
+            }
+            >img:nth-child(4) {
+                left: 15%; top: 75%;
+            }
+            >img:nth-child(5) {
+                left: 50%; top: 75%;
+            }
+            >img:nth-child(6) {
+                left: 85%; top: 75%;
+            }
+            >img:nth-child(7) {
+                left: 33%; top: 50%;
+            }
+        }
+        &.value8 {
+            >img:nth-child(1) {
+                left: 15%; top: 25%;
+            }
+            >img:nth-child(2) {
+                left: 50%; top: 25%;
+            }
+            >img:nth-child(3) {
+                left: 85%; top: 25%;
+            }
+            >img:nth-child(4) {
+                left: 15%; top: 75%;
+            }
+            >img:nth-child(5) {
+                left: 50%; top: 75%;
+            }
+            >img:nth-child(6) {
+                left: 85%; top: 75%;
+            }
+            >img:nth-child(7) {
+                left: 33%; top: 50%;
+            }
+            >img:nth-child(8) {
+                left: 66%; top: 50%;
+            }
+        }
+        &.value9 {
+            >img:nth-child(1) {
+                left: 15%; top: 25%;
+            }
+            >img:nth-child(2) {
+                left: 50%; top: 25%;
+            }
+            >img:nth-child(3) {
+                left: 85%; top: 25%;
+            }
+            >img:nth-child(4) {
+                left: 15%; top: 75%;
+            }
+            >img:nth-child(5) {
+                left: 50%; top: 75%;
+            }
+            >img:nth-child(6) {
+                left: 85%; top: 75%;
+            }
+            >img:nth-child(7) {
+                left: 33%; top: 50%;
+            }
+            >img:nth-child(8) {
+                left: 66%; top: 50%;
+            }
+            >img:nth-child(9) {
+                left: 99%; top: 50%;
+            }
+        }
+        &.value10 {
+            >img:nth-child(1) {
+                left: 15%; top: 25%;
+            }
+            >img:nth-child(2) {
+                left: 50%; top: 25%;
+            }
+            >img:nth-child(3) {
+                left: 85%; top: 25%;
+            }
+            >img:nth-child(4) {
+                left: 15%; top: 75%;
+            }
+            >img:nth-child(5) {
+                left: 50%; top: 75%;
+            }
+            >img:nth-child(6) {
+                left: 85%; top: 75%;
+            }
+            >img:nth-child(7) {
+                left: 33%; top: 50%;
+            }
+            >img:nth-child(8) {
+                left: 66%; top: 50%;
+            }
+            >img:nth-child(9) {
+                left: 99%; top: 50%;
+            }
+            >img:nth-child(10) {
+                left: 0%; top: 50%;
+            }
+        }
+    }
+}

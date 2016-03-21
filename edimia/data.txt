@@ -1,0 +1,27 @@
+/getData: {
+    "successCounter"    : "5",  // total correct answers for moment
+    "tries"             : "18", // total number of tries for moment
+    "maxTries"          : "3",  // defined for every moment
+    "exercise_type"     : "exercise",
+    "currentTries"      : "0",  // for current exercise
+    "currentEx"         : "9"   // in terms of progress indicator, starting from 0
+}
+
+/saveData: POST {
+    currentTries        : 1 // tries for current exercise
+    tries               : 1 // total number of tries for this moment
+}
+:RESPONSE {
+    "type"              : "kr",
+    "array1"            : [14,15,13],
+    "array2"            : [15,13,14],
+    "objects"           : [{"class":"numberimage_0","drag_value":15,"drag_parent":"drop_area1","ref_value":14},{"class":"numberimage_1","drag_value":13,"drag_parent":"drop_area2","ref_value":15},{"class":"numberimage_2","drag_value":14,"drag_parent":"drop_area0","ref_value":13}]
+}
+
+/walk: POST {
+    currentTries        : 0
+    data                : {"type":"kr","array1":[14,15,13],"array2":[15,13,14],"objects":[{"class":"numberimage_0","drag_value":15,"drag_parent":"drop_area1","ref_value":14},{"class":"numberimage_1","drag_value":13,"drag_parent":"drop_area2","ref_value":15},{"class":"numberimage_2","drag_value":14,"drag_parent":"drop_area0","ref_value":13}]}
+    exindex             : 1 // in terms of progress, next in the list
+    success_counter     : 1 // correct answers for moment
+    tries               : 1 // total number of tries for moment
+}

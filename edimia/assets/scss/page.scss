@@ -1,0 +1,561 @@
+$text-color: #686e6a;
+$text-color-input: #000000;
+
+@mixin transition($selector, $duration, $easing) {
+    -webkit-transition: $selector $duration $easing;
+    -moz-transition: $selector $duration $easing;
+    transition: $selector $duration $easing;
+}
+@mixin smoothing($smooth){
+    -webkit-font-smoothing: $smooth;
+    -moz-font-smoothing: $smooth;
+    -ms-font-smoothing: $smooth;
+    -o-font-smoothing: $smooth;
+    font-smoothing: $smooth;
+}
+@mixin border-sizing(){
+    -webkit-box-sizing:  border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+@mixin shadow($set,$hoff,$voff,$rad,$col){
+    box-shadow: inset 0 -5px 0 rgba(0,0,0,0.3);
+    -moz-box-shadow: inset 0 -5px 0 rgba(0,0,0,0.3);
+    -ms-box-shadow: inset 0 -5px 0 rgba(0,0,0,0.3);
+    -webkit-box-shadow: inset 0 -5px 0  rgba(0,0,0,0.3);
+    -o-box-shadow: inset 0 -5px 0 rgba(0,0,0,0.3);    
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;    
+}
+
+body {
+    
+    font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.4em;
+    @include smoothing(antialiased);
+    color: #4d4d4d;
+    margin: 0px;
+    
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+.clearfix {
+    display: inline-block;
+}
+html[xmlns] .clearfix {
+    display: block;
+}
+* html .clearfix {
+    height: 1%;
+}
+a, a:hover, a:focus {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.hidden {
+    display: none;
+}
+.pull-right {
+    float: right;
+}
+.pull-left {
+    float: left;
+}
+margin-for-numberdots {
+    margin-top: 40px;
+}
+#exercise-drag-target-area {
+    position: absolute; top: 0; right: 0; width: 150px; height: 100%; background-color: rgba(255, 255, 255, 0.8);
+    &.width-extended{ 
+        width: 250px; 
+    }
+}
+#page-wrapper {
+    position: absolute; width: 100%; height: 100%;
+/*     background: url('http://dev.edimia.se/assets/img/exercise/exercise-bg.png') repeat-x; */
+/*     background-position: top; */
+    background-color: #1495B6;
+}
+#page-wrapper-inner {
+    position: absolute; width: 100%; height: 100%;
+}
+#exercise-container {
+    position: fixed; width: 100%; height: 100%;
+}
+#exercise-wrapper {
+    position: absolute; width: 100%; height: 100%;
+}
+#exercise-view {
+    position: relative; width: 100%; height: 100%; min-height: 644px;
+}
+#exercise-content {
+    position: absolute; height: 100%; width: 570px; margin-left: -285px; left: 50%;
+    background-color: rgba(255,255,255,.8);
+    padding-top: 150px;
+}
+.eq-sign {
+    position: absolute; left: 190px; top: 70px; font-family: Gill; font-size: 60px; color: #00A651;
+}
+
+#exercise-content > div.answerrow:nth-child(1) {
+    margin-top: 160px; margin-left: 70px;
+}
+#exercise-content > div.answerrow:nth-child(2) {
+    margin-top: -15px; margin-left: 70px;
+}
+#exercise-content > div.answerrow:nth-child(3) {
+    margin-top: -15px; margin-left: 70px;
+}
+#page-wrapper-inner > div.number_image_holder {
+    margin-top: 6px;
+}
+
+.number_image_holder[data-number='10'] > div > img[data-type='block']:first-of-type,
+.number_image_holder[data-number='20'] > div > img[data-type='block']:first-of-type {
+    margin-left: 45px;
+}
+.number_image_holder[data-number='11'] > div > img[data-type='block']:first-of-type,
+.number_image_holder[data-number='12'] > div > img[data-type='block']:first-of-type,
+.number_image_holder[data-number='13'] > div > img[data-type='block']:first-of-type,
+.number_image_holder[data-number='14'] > div > img[data-type='block']:first-of-type,
+.number_image_holder[data-number='15'] > div > img[data-type='block']:first-of-type {
+    margin-left: 22px;
+}
+.number_image_holder[data-number='16'] > div > img[data-type='block']:first-of-type,
+.number_image_holder[data-number='17'] > div > img[data-type='block']:first-of-type,
+.number_image_holder[data-number='18'] > div > img[data-type='block']:first-of-type,
+.number_image_holder[data-number='19'] > div > img[data-type='block']:first-of-type {
+    margin-left: 8px;
+}
+.number_image_holder[data-number='10'] > div > img[data-type='kr']:first-of-type,
+.number_image_holder[data-number='20'] > div > img[data-type='kr']:first-of-type {
+    margin-left: 61px;
+}
+.number_image_holder[data-number='11'] > div > img[data-type='kr']:first-of-type,
+.number_image_holder[data-number='12'] > div > img[data-type='kr']:first-of-type,
+.number_image_holder[data-number='13'] > div > img[data-type='kr']:first-of-type {    
+    margin-left: 41px;
+}
+.number_image_holder[data-number='14'] > div > img[data-type='kr']:first-of-type,
+.number_image_holder[data-number='15'] > div > img[data-type='kr']:first-of-type,
+.number_image_holder[data-number='16'] > div > img[data-type='kr']:first-of-type {
+    margin-left: 26px;
+}
+.number_image_holder[data-number='17'] > div > img[data-type='kr']:first-of-type,
+.number_image_holder[data-number='18'] > div > img[data-type='kr']:first-of-type,
+.number_image_holder[data-number='19'] > div > img[data-type='kr']:first-of-type {
+    margin-left: 10px;
+}
+
+.textinstruction {
+    
+                
+        line-height: 20px;
+        margin-left:60px;
+        margin-right:15px;
+        margin-top:50px;
+        position:absolute;
+    span {
+          
+            color: #727874;
+            display:block;
+             font-size: 1.5em;
+    }
+}
+
+
+
+/* ------------------ COMMON ------------------------ */
+.exe-container-header {
+    @include border-sizing();  
+    
+    display: none;
+    height: 110px;
+    margin-bottom: 100px;
+    margin-top: -50px;
+    padding: 0 40px;
+    position: relative;
+    width: 100%;
+}
+.exe-container-question {
+    @include border-sizing();
+    width: 100%; height: 110px;
+}
+.exe-container-question > div .math-sign,
+.exe-container-answer > div .math-sign {
+    float: left; width: 10%; color: $text-color; font-size: 6em; text-align: center; line-height: 85px;
+}
+.exe-container-answer {
+    @include border-sizing();
+    width: 100%; height: 150px; margin-top: 100px;
+}
+* {
+    @include border-sizing();
+}
+.input-answer-holder input {
+    color: $text-color-input;
+    @include transition(color,0.3s,ease-in-out);    
+}
+
+.input-answer-holder.correct input {
+    color: #4B9643;
+}
+.input-answer-holder.wrong input {
+    color: #CE3045;
+}
+.input-answer-holder input.clear {
+    color: #FFFFFF !important;
+}
+
+.click-button-holder {
+    width: 25%; float: left; margin-left: 6.25%; height: 125px;
+}
+.click-button-holder > div {
+    margin: 0 auto; width: 100px; background-color: #687578; color: #FFFFFF; height: 105px;
+    text-align: center; line-height: 105px; font-weight: normal; font-size: 3em; letter-spacing: 4px;
+    position: relative; left: 50%; margin-left: -50px;
+    border-top: none;
+    @include shadow(inset,0,-5px,0,rgba(0,0,0,0.3));  
+    @include transition(border-color,0.3s,ease-in-out);
+    
+}
+.click-button-holder > div.correct {
+    background-color: #4B9643;
+}
+.click-button-holder > div.wrong {
+    background-color: #CE3045;
+}
+.click-button-holder > div:active,
+.click-button-holder > div.active {
+	margin-top: 3px;
+	line-height:102px;
+        height: 105px;
+	@include shadow(inset,0,-2px,0,rgba(0,0,0,0.3));
+	
+
+}
+.click-button-holder > div:before {
+    font-size: 1.5em;
+    font-weight: bold;
+    left: 50%;
+    position: absolute;
+    top: -31px;
+    letter-spacing: 2px;
+}
+.click-button-holder.number-dots[data-value='1'] > div:before {
+    content: '•';
+    margin-left: -6px;
+}
+.click-button-holder.number-dots[data-value='2'] > div:before {
+    content: '••';
+    margin-left: -13px;
+}
+.click-button-holder.number-dots[data-value='3'] > div:before {
+    content: '•••';
+    margin-left: -19px;
+}
+.click-button-holder.number-dots[data-value='4'] > div:before {
+    content: '••••';
+    margin-left: -26px;
+}
+.click-button-holder.number-dots[data-value='5'] > div:before {
+    content: '•••••';
+    margin-left: -32px;
+}
+.number-image-holder > img {
+    max-height: 100%;    
+}
+
+
+
+
+
+
+
+
+
+/*----------------- NUMBER DOTS ---------------------*/
+
+.number-dots:before,
+.click-button-holder.number-dots > div:before {    
+    font-size: .75em;
+    font-weight: bold;
+    //left: 50%;
+    position: absolute;
+    top: -31px;
+    letter-spacing: 2px;
+    
+}
+.number-dots:before {
+    font-size: 0.6em;
+    top: -50px;  
+    width: 100%;
+    left: 0;
+}
+.number-dots.value1:before,
+.click-button-holder.number-dots[data-value='1'] > div:before {    
+    content: '•';
+    line-height: 15px;
+//    margin-left: 15px;
+}
+.number-dots.value2:before,
+.click-button-holder.number-dots[data-value='2'] > div:before {
+    content: '••';
+    line-height: 15px;
+//    margin-left: -13px;
+}
+.number-dots.value3:before,
+.click-button-holder.number-dots[data-value='3'] > div:before {
+    content: '•••';
+    line-height: 15px;
+//    margin-left: -19px;
+}
+.number-dots.value4:before,
+.click-button-holder.number-dots[data-value='4'] > div:before {
+    content: '••••';
+    line-height: 15px;
+//    margin-left: -26px;
+}
+.number-dots.value5:before,
+.click-button-holder.number-dots[data-value='5'] > div:before {
+    content: '•••••';
+    line-height: 15px;
+//    margin-left: -32px;
+}
+.number-dots.value6:before,
+.click-button-holder.number-dots[data-value='6'] > div:before {    
+    content: '••• •••';   
+    line-height: 15px;
+    text-align: left;
+    left:23%;
+  
+//    margin-left: 15px;
+}
+.number-dots.value7:before,
+.click-button-holder.number-dots[data-value='7'] > div:before {
+    content: '•••• •••';  
+    line-height: 15px;
+    text-align: left;
+    left:17%;
+//    margin-left: -13px;
+}
+.number-dots.value8:before,
+.click-button-holder.number-dots[data-value='8'] > div:before {
+    content: '•••• ••••'; 
+    line-height: 15px;
+    text-align: left;
+    left:17%;
+//    margin-left: -19px;
+//  top: 5%;
+}
+.number-dots.value9:before,
+.click-button-holder.number-dots[data-value='9'] > div:before {
+    content: '••••• ••••';
+    line-height: 15px;
+    text-align: left;
+    left:5%;
+//    margin-left: -26px;
+}
+.number-dots.value10:before,
+.click-button-holder.number-dots[data-value='10'] > div:before {
+    content: '••••• •••••';
+    line-height: 15px;
+    text-align: left;
+    left:5%;
+//    margin-left: -32px;
+}
+/*.number-dots.value1:before,
+.click-button-holder.number-dots[data-value='1'] > div:before {    
+    content: '•';
+    line-height: 15px;
+//    margin-left: 15px;
+}
+.number-dots.value2:before,
+.click-button-holder.number-dots[data-value='2'] > div:before {
+    content: '••';
+    line-height: 15px;
+//    margin-left: -13px;
+}
+.number-dots.value3:before,
+.click-button-holder.number-dots[data-value='3'] > div:before {
+    content: '•••';
+    line-height: 15px;
+//    margin-left: -19px;
+}
+.number-dots.value4:before,
+.click-button-holder.number-dots[data-value='4'] > div:before {
+    content: '••••';
+    line-height: 15px;
+//    margin-left: -26px;
+}
+.number-dots.value5:before,
+.click-button-holder.number-dots[data-value='5'] > div:before {
+    content: '•••••';
+    line-height: 15px;
+//    margin-left: -32px;
+}
+.number-dots.value6:before,
+.click-button-holder.number-dots[data-value='6'] > div:before {    
+    content: '••• •••';   
+    line-height: 15px;
+    text-align: left;
+    left:23%;
+  
+//    margin-left: 15px;
+}
+.number-dots.value7:before,
+.click-button-holder.number-dots[data-value='7'] > div:before {
+    content: '•••• •••';  
+    line-height: 15px;
+    text-align: left;
+    left:17%;
+//    margin-left: -13px;
+}
+.number-dots.value8:before,
+.click-button-holder.number-dots[data-value='8'] > div:before {
+    content: '•••• ••••'; 
+    line-height: 15px;
+    text-align: left;
+    left:17%;
+//    margin-left: -19px;
+//  top: 5%;
+}
+.number-dots.value9:before,
+.click-button-holder.number-dots[data-value='9'] > div:before {
+    content: '••••• ••••';
+    line-height: 15px;
+    text-align: left;
+    left:5%;
+//    margin-left: -26px;
+}
+.number-dots.value10:before,
+.click-button-holder.number-dots[data-value='10'] > div:before {
+    content: '••••• •••••';
+    line-height: 15px;
+    text-align: left;
+    left:5%;
+//    margin-left: -32px;
+}*/
+/* ------------------------------------------------- */
+
+
+
+#page-wrapper-inner img.number_image_content.dragmaxwidth {
+    max-width: 45px;
+}
+
+.drag-answer-container {
+    margin-left: -22px; 
+    margin-top: -22px;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    
+   
+}
+.drag-answer-container > img {
+    float: none;
+    left: 50%;
+    position: relative;
+    top: 50%;
+    &.left {
+        left: 35%;
+    }
+    &.left-25percent {
+        left: 25%;
+    }
+}
+
+.twoitem > img{
+     position:absolute;
+     
+     &:first-child{
+         top:45%;
+     }
+     &:last-child{
+         top:55%;
+     }
+}
+
+
+
+
+
+
+
+.c6-10-2A5 .exe-container-header .equation-num {
+    float: left;
+    width: 25%; 
+    height: 100%;
+    text-align: center;
+   position: relative;
+   & img {
+       float: none;
+       max-height: 100%;
+   }
+}
+//.c6-10-2A5 .exe-container-header .equation-num img {
+    
+//}
+/*
+.c6-10-2A5 .exe-container-answer {
+    float: left;
+    width: 100%;
+}
+.c6-10-2A5 .exe-container-answer > div:first-child {
+    float: left;
+    width: 66%;
+}
+.c6-10-2A5 .exe-container-answer div.answer-container {
+    float: left;
+    width: 34%;
+    height: 100%;
+    position: relative;
+}
+.c6-10-2A5 .exe-container-answer > div:first-child .equation-num {*/
+//    float: left;
+//    width: 40%;
+//}
+//.c6-10-2A5 .exe-container-answer > div:first-child .math-sign {
+//    float: left;
+//    width: 10%;
+//}
+
+
+//.c6-10-2A5 .exe-container-question > div:last-child {
+//    margin-top: 42px;
+//}
+//.c6-10-2A5 .exe-container-question > div:last-child .equation-num {
+//    padding-top: 12px;
+//}
+/*.c6-10-2A5 .exe-container-header > div:first-child .equation-num > div.pricetag{
+    background-color: #FFFFFF;
+    bottom: -15px;
+    color: #727874;
+    font-size: 2.5em;
+    height: 40px;
+    left: 50%;
+    line-height: 40px;
+    margin-left: -50px;
+    position: absolute;
+    width: 100px;
+    z-index: 100;
+}*/
+
+
+
+
+
+

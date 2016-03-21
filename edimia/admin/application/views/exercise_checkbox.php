@@ -1,0 +1,1 @@
+<input type="checkbox" name="<?=$name;?>[]" value="<?=$id;?>" id="<?=$hash;?>" <?=$checked;?> />&nbsp;<label for="<?=$hash;?>"><?=$label;?></label>

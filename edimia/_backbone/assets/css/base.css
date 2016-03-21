@@ -1,0 +1,174 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    background: url('/assets/image/background_kids.jpg') no-repeat;
+    background-size: 100% 100%;
+    font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.4em;
+
+    color: #4d4d4d;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+.clearfix {
+    display: inline-block;
+}
+html[xmlns] .clearfix {
+    display: block;
+}
+* html .clearfix {
+    height: 1%;
+}
+
+#drag-targets {
+    padding: 10px;
+    position: absolute;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+}
+.answer-drag {
+    position: absolute;
+    width: 100px; 
+    height: 50px; 
+    right: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid #029DE0;
+    line-height: 50px;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    color: #009ddf;
+    border-radius: 5px;
+    text-shadow: 0px 0px 2px #FFFFFF;
+}
+#drag-targets .answer-drag:not(:first-child) {
+    margin-top: 10px;
+}
+#drag-targets .ui-effects-wrapper:not(:first-child) {
+    margin-top: 10px ! important;
+}
+.answer-drag.dropped {
+    background: transparent;
+    border: none;
+    color: #FFFFFF;
+    text-shadow: 0px 0px 2px #009ddf;
+}
+
+#drop-area {
+    position: absolute;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    top: 0px; width: 630px; margin-left: -315px;
+    left: 50%;
+}
+#drop-area .drop-target {
+    display: none;
+    height: 200px;
+}
+#drop-area .drop-target > div.exe-task,
+#drop-area .drop-target > div.exe-eq {
+    height: 160px; 
+    font-size: 1.5em;
+    font-weight: bold;
+}
+#drop-area .drop-target > div.exe-task {
+    background-color: rgba(0, 0, 255, 0.2); 
+    border: 1px solid rgba(0,0,255,0.3);
+    width: 200px; 
+    text-align: center;
+    color: #FFFFFF;
+    border-radius: 5px;
+}
+#drop-area .drop-target:nth-child(2) {
+    margin-left: 80px;
+}
+#drop-area .drop-target:nth-child(3) {
+    margin-left: 30px;
+}
+#drop-area .drop-target:not(:first-child) {
+    margin-top: 20px;
+}
+#drop-area .ui-effects-wrapper:not(:first-child) {
+    margin-top: 10px ! important;
+}
+#drop-area .ui-effects-wrapper:last-child {
+    margin-top: 0px ! important;
+}
+#drop-area .drop-target.done {
+    background-color: rgba(0, 255, 0, 0.3); 
+    border: 1px solid #26992D;
+}
+#drop-area .drop-target > div.drophere.accept {
+    box-shadow: 0 0 10px yellow;
+}
+
+
+
+.number_image_holder {
+    height: auto;
+    position: absolute;
+    text-align: center;
+    width: auto;
+}
+.number_image_content {
+    float: left;
+    margin-left: 10px;
+    margin-top: 15px;
+    position: relative;
+}
+.bounceInLeft {
+    animation-name: bounceInLeft;
+}
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+@-moz-keyframes bounceInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-2000px);
+    }
+    60% {
+        opacity: 1;
+        transform: translateX(30px);
+    }
+    80% {
+        transform: translateX(-10px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+@-moz-keyframes bounceInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-2000px);
+    }
+    60% {
+        opacity: 1;
+        transform: translateX(30px);
+    }
+    80% {
+        transform: translateX(-10px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}

@@ -1,0 +1,1 @@
+marginTop: (($(window).height() - dragHeight-85 -100)/2)+ "px"

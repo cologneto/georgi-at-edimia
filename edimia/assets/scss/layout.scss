@@ -1,0 +1,1681 @@
+$text-color: #686e6a;
+$text-color-input: #000000;
+$border-color: #A9ACAB;
+$color-selected: #666364;
+$color-correct: #008000;
+$color-accept: #0AA83F;
+$color-wrong: #CE3045; 
+$color-unselected: #bdbcbc; // color for unselected dashed box
+   
+$default-row-height: 110px;
+@mixin transition($selector, $duration, $easing) {
+    -webkit-transition: $selector $duration $easing;
+    -moz-transition: $selector $duration $easing;
+    transition: $selector $duration $easing;
+}
+
+.relative-position {
+    position: relative;
+}
+
+.full-height {
+    height: 100%;
+} 
+.bottom-margin {
+    margin-bottom: 20px;
+}
+.top-margin{
+    margin-top: 20px;
+}
+
+.top-margin60{
+    margin-top: 60px;
+}
+.container-box {
+    /*@extend .full-height;*/
+    width: 100%;
+}
+.narrow-row-height {
+    height: 85px;
+}
+.float-left {
+    float: left;
+}
+.float-right {
+    float: right;
+}
+.center-block {
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+    .margin-top {
+        margin-top: 36px;
+    }
+}
+.padding-side {
+    >div {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+.padding-side-big {
+    >div {
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+}
+.padding-bottom {
+    >div {
+        padding-bottom: 20px;
+    }
+}
+
+.padding-top {
+    >div {
+        padding-top: 20px;
+    }
+}
+
+.paddin-only-left{
+    padding-left: 5px;
+}
+
+ 
+.exe-container-header {
+    float: none;
+    height: $default-row-height;
+    width: 100%;
+    line-height: 0;
+    display: block;
+
+    &.no-margin {
+        margin: 0;
+    }
+    &.small-margin {
+        margin-bottom: 10px;
+    }
+}
+.exe-container-question {
+    float: none;
+    height: $default-row-height;
+    width: 100%;
+    line-height: 0;
+     
+}
+.exe-container-answer {
+    float: none;
+    height: $default-row-height;
+    width: 100%;
+    line-height: 0;
+    &.margin-top {
+        margin-top: 50%;
+    }
+    
+    &.display-none {
+        display: none;
+    }
+    
+    & div.answer-container.accept {
+        border-color: #0aa83f;
+
+    }
+    
+    .two-line-dots-answer{
+     
+        &.number-dots[data-value='1'] > div:before {    
+            top:2%;      
+        }
+        &.number-dots[data-value='2'] > div:before {    
+            top:2%;      
+        }
+        &.number-dots[data-value='3'] > div:before {    
+            top:2%;      
+        }
+        &.number-dots[data-value='4'] > div:before {    
+            top:2%;      
+        }   
+        &.number-dots[data-value='5'] > div:before {    
+            top:2%;      
+        }
+        &.number-dots[data-value='6'] > div:before {    
+            top:2%;
+            left:30%;
+            text-align: left;
+        }
+        &.number-dots[data-value='7'] > div:before {
+            top:2%;
+            left:23%;
+            text-align: left;
+        }
+        &.number-dots[data-value='8'] > div:before {
+            top:2%;
+            left:23%;
+            text-align: left;
+        }
+        &.number-dots[data-value='9'] > div:before {
+            top:2%;
+            left:16%;
+            text-align: left;
+        }
+        &.number-dots[data-value='10'] > div:before {               
+            top:2%;              
+            left:16%;
+            text-align: left;
+        }                
+    }
+}
+
+#exercise-drag-target-area {
+    display: none;
+     
+    &.image-limit {
+        .number_image_content {
+            height: 35px 
+        }
+    }
+}
+.text-center {
+    text-align: center;
+}
+.has-text {
+    @extend .text-center;
+    color: $text-color;
+    font-size: 3em ! important;
+    letter-spacing: 4px;
+    line-height: 60px ! important;
+
+    &.large {
+        font-size: 6em ! important;;
+        line-height: 100px !important;
+        &.limit-height {
+            line-height: 60px !important;
+        }
+    }
+    &.med {
+        font-size: 4em ! important;;
+        line-height: 60px !important;
+    }
+
+    &.right {
+        text-align: right;
+        padding-right: 20px;
+    }
+    &.size2em{ 
+       font-size: 2em ! important;
+       line-height: 105px ! important;
+       color: #FFFFFF;
+    }    
+}
+.element-short-height {
+    height: 60px;
+    line-height: 60px;
+}
+.element-med-height {
+    height: 70px;
+    line-height: 70px;
+}
+.element-small-width {
+    width: auto;
+    min-width: 60px;
+}
+.layout {
+    &.no-header {
+        .exe-container-header {
+            display: none;
+        }
+    }
+    &.no-question {
+        .exe-container-question {
+            display: none;
+        }
+    }
+    &.no-answer {
+        .exe-container-answer {
+            display: none;
+        }
+    }
+    &.answer-no-margin {
+        margin: 0;
+    }
+    .exe-container-answer {
+        margin-top: 110px;
+        &.no-margin {
+            margin: 0;
+        }
+        &.space-top {
+            margin-top: 25px
+        }
+        &.margin-top {
+            margin-top: 55px;
+        }
+    }
+    &.fluid {
+        &.cols-2 {
+            .exe-container-question {
+                @extend .float-left;
+                @extend .container-box;
+            }
+            .exe-container-answer {
+                @extend .float-left;
+                @extend .container-box;
+                margin-top: 0;
+                               
+            }
+            &.col-w80 {
+                .exe-container-question {
+                    width: 80%;
+                }
+                .exe-container-answer {
+                    width: 20%;
+                }
+            }
+            &.col-w75 {
+                .exe-container-question {
+                    width: 75%;
+                }
+                .exe-container-answer {
+                    width: 25%;
+                }
+            }
+            &.col-w70 {
+                .exe-container-question {
+                    width: 70%;
+                }
+                .exe-container-answer {
+                    width: 30%;
+                }
+            }
+            &.col-w66 {
+                .exe-container-question {
+                    width: 66%;
+                }
+                .exe-container-answer {
+                    width: 34%;
+                }
+            }
+            &.col-w55 {
+                .exe-container-question {
+                    width: 55%;
+                }
+                .exe-container-answer {
+                    width: 45%;
+                }
+            }
+            &.col-w50 {
+                .exe-container-question {
+                    width: 50%;
+                }
+                .exe-container-answer {
+                    width: 50%;
+                }
+            }
+        }
+
+        &.row-narrow {
+            .exe-container-question {
+                @extend .narrow-row-height;
+            }
+            .exe-container-answer {
+                @extend .narrow-row-height;
+            }
+        }
+        &.auto-height {
+            .exe-container-question,
+            .exe-container-answer {
+                height: auto;
+            }
+        }
+  
+        &.padding-right-answer{            
+            .exe-container-answer {
+                padding: 0px 20px;
+            }            
+        } 
+
+    }
+    &.one-row-answer{    
+        .exe-container-answer{
+            .equation-w80{
+                width: 80%;
+                float:left;
+            }
+            .equation-num-left {                   
+                width: 25%;
+                float:left;
+            } 
+            .math-sign-operator{
+                width: 25%;
+                float:left;
+            }
+            .equation-num-right{
+                width: 25%;
+                float:left;
+            }
+            .math-sign-equal{
+                width: 25%;
+                float:left;
+            }
+            .answer-container {
+                width: 20%;
+                float:left;
+            }
+        }
+    }
+    &.question-figure{ 
+        .question-signs{
+            width: 550px;
+            height: 600px;              
+            
+            >div:nth-child(1) {
+                left: 30%; top: 35%;
+            }
+            >div:nth-child(2) {
+                left: 55%; top: 24%;
+            }
+            >div:nth-child(3) {
+                left: 0%; top: 22%;
+            }
+            
+            >div:nth-child(4) {
+                left: 10%; top: 55%;
+                width:20%;
+            }            
+            >div:nth-child(5) {
+                left: 40%; top: 55%;
+                width:20%;
+            }
+            >div:nth-child(6) {
+                left: 70%; top: 55%;
+                width:30%;
+            }
+        }
+        .question-cross{
+            width: 550px;
+            height: 600px;              
+            
+            >div:nth-child(1) {
+                left: 30%; top: 20%;
+            }
+            >div:nth-child(2) {
+                left: 30%; top: 50%;
+            }
+            >div:nth-child(3) {
+                left: 0%; top: 35%;
+            }
+            >div:nth-child(4) {
+                left: 62%; top: 35%;
+            }            
+            >div:nth-child(5) {
+                left: 45%; top: 35%;
+                .equation-num-left{
+                    display:none;
+                }
+                width: 20%;
+                
+            }
+        }
+        .question-heptagon{
+            >div:nth-child(1) {
+                left: 10%; top: 20%;
+            }
+            >div:nth-child(2) {
+                left: 53%; top: 20%;
+            }
+            >div:nth-child(3) {
+                left: 0%; top: 35%;
+            }
+            >div:nth-child(4) {
+                left: 62%; top: 35%;
+            }
+            >div:nth-child(5) {
+                left: 3%; top: 50%;
+            }
+            >div:nth-child(6) {
+                left: 60%; top: 50%;
+            }
+            >div:nth-child(7) {
+                left: 33%; top: 65%;
+            }
+            >div:nth-child(8) {
+                left: 26%; top: 40%;
+            }
+        }
+        .question-fourinline{
+            >div{
+                width: 25%;
+            }
+            >div:nth-child(1) {
+                left: 2%; top: 30%;
+            }
+            >div:nth-child(2) {
+                left: 12%; top: 20%;
+            }
+            >div:nth-child(3) {
+                left: 30%; top: 30%;
+            }
+            >div:nth-child(4) {
+                left: 40%; top: 20%;
+            }
+            >div:nth-child(5) {
+                left: 58%; top: 30%;
+            }
+            >div:nth-child(6) {
+                left: 70%; top: 20%;
+            }
+            >div:nth-child(7) {
+                left: 85%; top: 30%;
+            }
+        }
+        .question-rainbow{
+            >div{
+                width: 25%;
+            }
+            >div:nth-child(1) {
+                left: 2%; top: 45%;
+            }
+            >div:nth-child(2) {
+                left: 3%; top: 30%;
+            }
+            >div:nth-child(3) {
+                left: 30%; top: 30%;
+            }
+            >div:nth-child(4) {
+                left: 37%; top: 20%;
+            }
+            >div:nth-child(5) {
+                left: 54%; top: 30%;
+            }
+            >div:nth-child(6) {
+                left: 75%; top: 30%;
+            }
+            >div:nth-child(7) {
+                left: 85%; top: 45%;
+            }
+        }
+        .question-rainbow-3el{
+            >div{
+                width: 25%;
+            }
+            >div:nth-child(1) {
+                left: 15%; top: 45%;
+            }
+            >div:nth-child(2) {
+                left: 20%; top: 28%;
+            }
+            >div:nth-child(3) {
+                left: 45%; top: 30%;
+            }
+            >div:nth-child(4) {
+                left: 65%; top: 28%;
+            }
+            >div:nth-child(5) {
+                left: 75%; top: 45%;
+            }
+        }
+        
+        .question-square{
+            
+            width: 550px;
+            height: 600px; 
+            
+            >div:nth-child(1) {
+                left: 0%; top: 20%;
+            }
+            >div:nth-child(2) {
+                left: 50%; top: 20%;
+            }
+            >div:nth-child(3) {
+                left: 0%; top: 50%;
+            }
+            >div:nth-child(4) {
+                left: 50%; top: 50%;
+            }
+            
+        }
+        
+        .equation-full-pyramide{
+                height:240px;
+                width: 240px;
+            >div{
+                border: 2px solid $border-color;
+                height: 120px;
+                width: 120px;
+                position:absolute;
+            }
+            >div:nth-child(1) {
+                left: 9%; top: 49%;
+            }
+            >div:nth-child(3) {
+                left: 58%; top: 49%;
+            }
+            >div:nth-child(5) {
+                left: 33%; top: 0%;
+            }
+        }
+        
+        .equation-container{
+            position:absolute;            
+            width:40%;
+            height:130px;   
+            .equation-num-left,
+            .equation-num-right{
+                float:left;
+                width:40%;
+            }
+            .math-sign-operator{
+                float:left;               
+                width:20%;
+            }          
+        }
+        .equation-container-full{
+            position:absolute;           
+           
+        }
+    }
+    
+    &.show-drag-area {
+        #exercise-drag-target-area {
+            display: block;
+            
+        }
+    }
+  
+    &.two-image-center-header{
+        .exe-container-header{
+            width:60%;
+            left:20%;
+        }
+    }
+}
+.dashed {
+    @include transition(border, 0.3s, ease-in-out);
+    border: 2px dashed $border-color;
+    height: 100%;
+    position: relative;
+    width: 100%;
+    &.small {
+        &.square {
+            height: 80px;
+            line-height: 80px;
+            width: 80px;
+        }
+        &.rect {
+            width: 140px;
+            height: 80px;
+            line-height: 80px; 
+        }
+        &.rect-widther{
+            width: 170px;
+            height: 70px;
+            line-height: 70px;
+        }
+    }
+   
+    &.centered {
+        margin: 0 auto;
+    }
+    &.selected {
+        border-color: $color-selected;
+    }
+    &.correct {
+        border-color: $color-correct;
+    }
+    &.accept {
+        border-color: $color-accept;
+    }
+    &.wrong {
+        border-color: $color-wrong;
+    }
+    &.small-height {
+        height: 65%;
+        /*margin-left: 5px;*/
+    }
+    &.narrow-row-height {
+        height: 58px;
+        margin: 5% 0;
+        width: 60px;
+    }
+    &.margin-small-left-right {
+        margin: 4%;
+    }
+}
+.equation-container-full {
+    @extend .container-box;
+    @extend .full-height;
+    >div {
+        @extend .full-height;
+        @extend .float-left;
+        
+       
+    }
+    .equation-num {
+        width: 25%;
+        &.custom-width {
+            width: 20%;
+        }
+        &.border-bottom:after {
+            border-bottom: 3px solid #686e6a;
+            color: rgba(0, 0, 0, 0);
+            content: ".";
+            left: 50%;
+            margin-left: -50px;
+            position: absolute;
+            width: 100px;
+}
+    }
+    .math-sign {
+        width: 12.5%;
+    }
+    .underlining{
+        
+            border-bottom: 3px solid #686E6A;
+            color: rgba(0, 0, 0, 0);
+            content: ".";  
+    }
+    &.same-width {
+        .equation-num,
+        .math-sign {
+            width: 20%;
+        }
+    }
+    &.narrow-signs {
+        .equation-num {
+            width:23%;
+        }
+        .math-sign {
+            width: 15%;
+        }
+    }
+    &.narrower-signs {
+        .equation-num {
+            width:30%;
+        }
+        .math-sign {
+            width: 5%;
+        }
+    }
+    &.wide-middle {
+        .equation-num {
+            width:25%;
+            &.equation-num-right {
+                width: 30%
+            }
+        }
+        .math-sign {
+            width: 10%;
+        }
+    }
+    &.half-width {
+        width: 60%;
+        margin-left: 20%;
+    }
+    &.pad-sides {
+        padding: 0 20px;
+    }
+    &.pad-sides-more {
+        padding: 0 40px;
+    }
+    &.equation-marg-left5{
+        margin-left: 5%;
+    }
+    &.layout-11111{
+        margin-left:10%;
+        .equation-num{
+            position:relative;
+            width: 20%;
+        }
+    }
+    &.layout-00110{
+      width:25%;
+      .equation-num-right{
+          width:70%;
+      }
+      .math-sign-equal{
+          width:30%;
+      }
+      .equation-num-left,
+      .equation-num-result,
+      .math-sign-operator{
+          display:none;
+      }
+      
+    }
+    &.layout-00011{
+      width:25%;
+      .equation-num-result{
+          width:70%;
+      }
+      .math-sign-equal{
+          width:30%;
+      }
+      .equation-num-left,
+      .equation-num-right,
+      .math-sign-operator{
+          display:none;
+      }
+      
+    }
+    &.layout-00101-drag{
+        .equation-num {           
+            @extend .float-left;
+        }
+        margin-left: 7%;
+        
+        .math-sign,
+        .equation-num-left {
+            display: none;
+        } 
+        .equation-num-result,
+        .equation-num-right{
+            width: 40%;
+            height: 180px;
+        }
+        .equation-num-result{
+            margin-left: 6%;
+        }
+        
+    }
+    &.layout-00101-drag-med{
+        width:40%;
+        .equation-num {           
+            @extend .float-left;
+        }
+        margin-left: 10%;
+        
+        .math-sign,
+        .equation-num-left {
+            display: none;
+        } 
+        .equation-num-result,
+        .equation-num-right{
+            width: 40%;
+            height: 90px;
+        }
+        .equation-num-result{
+            margin-left: 2%;
+        }
+        
+    }
+    &.layout-00111{
+        
+        .equation-num {
+            @extend .full-height;
+            @extend .float-left;           
+        }
+        .equation-num-right {
+            width: 40%;
+        }
+        .math-sign-equal {
+            width: 20%;
+        }        
+        .equation-num-result {
+            width: 40%;
+        }
+        .math-sign-operator,
+        .equation-num-left {
+            display: none;
+        }  
+        
+    }
+    &.layout-10101{
+        
+        .equation-num {
+            @extend .full-height;
+            @extend .float-left;           
+        }
+        
+        .equation-num-left,
+        .equation-num-right,
+        .equation-num-result{
+            width: 33%;
+        }       
+        
+        &.desc-width {
+            .equation-num-left {
+                width: 45%;
+            }
+            .equation-num-right {
+                width: 35%;
+            }
+            .equation-num-result{
+                width: 20%;
+            }
+        }
+        .math-sign
+        {
+            display: none;
+        }  
+        
+    }
+    
+    &.layout-1121111{
+        
+        .equation-num {
+            @extend .full-height;
+            @extend .float-left;
+        }
+        .equation-num-left        
+        {
+            width: 15%; 
+        }
+        .equation-num-right{
+            width: 20%; 
+        }
+        .equation-num-result{
+            width: 55%;
+        }
+        math-sign{
+            width:10%;
+        }
+        math-sign-equal{
+            display:none;
+        }  
+       
+    }
+    
+    &.layout-10101-txt-in-txt{
+        
+        margin-left:10%;
+        
+        .equation-num {
+            @extend .full-height;
+            @extend .float-left;           
+        }
+        
+        .equation-num-left,        
+        .equation-num-result{
+            width: 40%;            
+            margin-top: 30px;
+        }
+        .equation-num-left{
+            text-align: right;
+        }
+        .equation-num-result{
+            text-align: left;
+        }
+        .equation-num-right{
+            width:20%;
+        }
+        
+        .math-sign
+        {
+            display: none;
+        }  
+        
+    }
+    
+    &.space-top {
+            margin-top: 25px
+        }  
+    &.drop-signs {
+        .math-sign { 
+            @extend .dashed;
+            color: rgba(0,0,0,0);
+
+            .dragbox {
+                font-size: 1em;
+                line-height: 45px;  /* when default height of box - E6 */
+            }
+        }
+    }    
+        
+}
+.equation-container {
+    @extend .container-box;
+    @extend .full-height;
+    &.layout-1010 {
+        .equation-num {
+            @extend .full-height;
+            @extend .float-left;
+            width: 50%;
+           
+        }
+        .math-sign {
+            display: none;
+        }
+        &.wide-num2{
+            .equation-num-left {
+                width: 30%;
+            }            
+        }
+        &.positining-relative{
+            position: relative;
+        }
+
+
+    }
+    
+    &.layout-1110 {
+        &.half-width {
+          width: 60%;
+          margin-bottom: 5%;
+        }
+            
+         .equation-num {
+            @extend .full-height;
+            @extend .float-left;
+            width: 35%;
+        }
+        .math-sign-equal {
+            display: none;
+        }
+        .math-sign-operator {
+            @extend .full-height;
+            @extend .float-left;
+            width: 30%;
+        }
+    }
+    &.layout-0011 {
+        .equation-num-right,
+        .math-sign-equal {
+            @extend .full-height;
+            @extend .float-left;
+        }
+        .equation-num-right {
+            width: 80%;
+        }
+        .math-sign-equal {
+            width: 20%;
+        }
+        .math-sign-operator,
+        .equation-num-left {
+            display: none;
+        }  
+
+    }
+    &.layout-1111 {
+        .equation-num,
+        .math-sign {
+            @extend .full-height;
+            @extend .float-left;
+        }
+        &.same-width {
+            .equation-num,
+            .math-sign {
+                width: 25%;
+            }
+        }
+        &.narrow-signs {
+            .equation-num {
+                width: 35%;
+            }
+            .math-sign {
+                width: 15%;
+            }
+        }
+        &.wide-num2 {
+            .equation-num,
+            .math-sign {
+                width: 20%;
+            }
+            .equation-num-right {
+                width: 40%;
+            }
+        }
+        &.half-width {
+            width: 50%;
+            margin-left: 25%;
+        }
+        &.relpos {
+            position:relative;
+        }
+        .equation-num{
+            position:relative;
+        }
+        &.centered{
+            width: 50%;
+            margin-left: 25%;
+        }
+        &.wide-num1{
+            .equation-num-left{
+                width: 50%;
+            }
+            .equation-num-right{
+                width: 30%;
+            }
+            .math-sign {
+                width: 10%;
+            }
+        }
+    }
+    &.drop-signs {
+        .math-sign { 
+            @extend .dashed;
+            color: rgba(0,0,0,0);
+
+            .dragbox {
+                font-size: 1em;
+                line-height: 45px;  /* when default height of box - E6 */
+            }
+        }
+    }
+    .math-sign {
+        @include transition(color, 0.3s, ease-in-out);
+        &.solved {
+            color: $text-color;
+        }
+    }
+    &.underlining-left{
+        .equation-num-left:after {
+            border-bottom: 3px solid #686E6A;
+            color: rgba(0, 0, 0, 0);
+            content: ".";
+            left: 50%;
+            margin-left: -50px;
+            position: absolute;
+            width: 100px;
+            line-height: 100px
+        }
+    }
+
+    &.underlining-right{
+        .equation-num-right:after {
+            border-bottom: 3px solid #686E6A;
+            color: rgba(0, 0, 0, 0);
+            content: ".";
+            left: 50%;
+            margin-left: -50px;
+            position: absolute;
+            width: 100px; 
+            line-height: 100px
+        } 
+    }
+    
+    &.small-signs {
+        .math-sign {
+            line-height: 60px;
+            font-size: 3em;
+        }
+    }    
+    &.two-line-dots {
+        .number-dots.value5:before,
+            .click-button-holder.number-dots[data-value='5'] > div:before {
+            left:-22%;
+        }
+        .number-dots.value6:before,
+            .click-button-holder.number-dots[data-value='6'] > div:before {
+            left:5%;
+        }
+        .number-dots.value7:before,
+            .click-button-holder.number-dots[data-value='7'] > div:before {
+            left:-8%;
+        }
+        .number-dots.value8:before,
+            .click-button-holder.number-dots[data-value='8'] > div:before {
+            left:-8%;
+        }
+        .number-dots.value9:before,
+            .click-button-holder.number-dots[data-value='9'] > div:before {
+            left:-20%;
+        }
+        .number-dots.value10:before,
+            .click-button-holder.number-dots[data-value='10'] > div:before {
+            left:-20%;
+        }
+
+    }
+    &.padding-top-20{
+        padding-top:20px;
+    }
+    &.one-row-question-answer{
+        width: 75%; 
+        float: left;
+    }
+}
+.equation-container,
+.equation-container-full {
+    >div {
+        >div:before{
+            line-height: 0;
+        }
+    }
+    &.inline-input {
+        .input-answer-holder {
+            float: right;
+            margin-right: 10px;
+            margin-top: 0;
+            &.fix-input {
+                input {
+                    position: relative; top: -6px
+                }
+            }
+        }
+    }
+    &.position-relative {
+       
+        .equation-num {
+             position: relative;
+            .number-image-holder {
+                &.position-absolute {
+                    position: absolute;
+                    left: -60%;
+                }
+            }
+          
+        }
+    }
+    &.drop-signs {
+        .math-sign { 
+            @extend .dashed;
+            color: rgba(0,0,0,0);
+
+            .dragbox {
+                font-size: 1em;
+                line-height: 45px;  /* when default height of box - E6 */
+            }
+        }
+    }
+    &.margin-top-minus {
+        margin-top: -15px;
+    }
+    
+}
+.number-image-holder {
+    @extend .container-box;
+    @extend .bottom-margin;
+    @extend .center-block;
+    @extend .full-height;
+    &.padding-left {
+        padding-left: 18%;
+    }
+    .number_image_content {
+        max-height: 100%;
+        &.no-float {
+            float: none;
+        }
+        &.no-margin {
+            margin: 0 1px;
+        }
+        &.motion {
+            float: right;            
+        }
+        &.max-height90{
+            max-height: 90%;
+        }
+        &.max-height80{
+            max-height: 80%;
+        }
+        &.max-height40{
+            max-height: 40%;
+        }
+    }
+    &.limit-height {
+        &.h100 {
+            height: 100px;
+        }
+        &.padding-left {
+            padding-left: 15%;
+        }
+    }
+    &.img-contain-small {
+        .number_image_content {
+            height: 35px;
+            top: 50%;
+            margin-top: -17px;
+            &.no-float {
+                float: none;
+            }
+            &.no-margin {
+                margin: 0 1px;
+            }
+            &.float-left {
+                float: left;
+            }
+         
+        }
+    }
+    &.img-contain-med-small {
+        .number_image_content {
+            height: 45px;
+            top: 50%;
+            margin-top: -20px;
+            &.no-float {
+                float: none;
+            }
+            &.no-margin {
+                margin-left: -3px;
+                margin-right: -3px;
+                
+            }
+            &.margin-left {
+                margin-left: 10px;
+            }
+            &.no-top {
+                top:0;
+            }
+            &.padding-left {
+                padding-left: 10%;
+            }
+            &.float-right {
+                float: right;
+            }
+        }
+    }
+    &.img-contain-med {
+        .number_image_content {
+            height: 55px;
+            top: 50%;
+            margin-top: -27px;
+            &.no-float {
+                float: none;
+            }
+            &.no-margin {
+                margin: 0 1px;
+            }            
+        }
+    }
+    &.img-contain-big {
+        .number_image_content {
+            height: 65px;
+            top: 50%;
+            margin-top: -37px;
+            &.no-float {
+                float: none;
+            }
+            &.no-margin {
+                margin: 0 1px;
+            }
+        }
+    }
+    &.half-width {
+        @extend .float-left;
+        width: 50%;
+    }
+    &.full-width {
+        width: 100%;
+    }
+    &.has-label {
+        &:before {
+            color: $text-color;
+            display: block;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            position: relative;
+            text-align: center;
+            top: -15px;
+        }
+        &.label-youhave {
+            &:before {
+                content: "Du har";
+            }
+        }
+        &.label-tobuy {
+            &:before {
+                content: "Du köper"; 
+            }
+        }
+    }
+    &.img-center-pricetag{
+        padding-left: 15%;
+        padding-right: 15%; 
+    }
+    &.full-width{
+        width: 100%;
+    }
+    &.width_90{
+        width: 90%;
+    }
+    &.only-float-left{
+        .number_image_content{
+            float: left;
+        }
+    }
+    &.relpos {
+            position:relative;
+    }
+ }
+.answer-container {
+    @extend .container-box;
+    @extend .bottom-margin;
+
+    &.gap-bottom {
+        margin-bottom: 30px;
+    }
+    &.short {
+        @extend .element-med-height;
+    }
+    &.answer-border {
+
+        border: 2px dashed #a9acab;
+        height: 100px;
+        width: 100%;
+        position: relative;
+        margin-bottom: 10px; 
+        &.smaller-width{
+             width: 90%;
+        }
+    }
+    &.fluid {
+        width: 100%;
+    }
+
+
+
+} 
+
+.drag-answer-container {
+    
+    height: 100%;
+    width: 100%;
+    margin-left: 10px;
+    margin-top: 10px;
+    position: relative; 
+    margin-bottom: 10px;
+    
+    &.width-smaller{
+       width: 90%; 
+    }
+    .marg-left{
+        margin-left: -30%;
+    }
+   
+}
+
+.drag-img-small-right-twoitem{
+    position:absolute !important;
+    max-width: 45px;
+    left: 35%;
+    &:first-child{
+        top:45%;
+    }
+    &:last-child{
+        top:55%;
+    }
+    &.marg-top{
+        margin:0px 0px 10px 0px;
+    }
+}
+
+.drag-img-small-right{
+        max-width: 45px;
+        left: 35%;
+        top:  50%;
+    }
+.drag-img-med{
+        height: 55px;
+        float:none !important;
+    }
+.drag-img-large{
+        height: 100px;
+    }    
+
+.dragbox {
+    &.math-sign-dragbox {
+        background-color: #FFFFFF;
+        box-shadow: 4px 4px #737975;
+        font-size: 4em;
+        left: 35%;
+        /*margin-left: -28px;*/
+        text-align: center;
+        top: auto;
+        color: $text-color;
+        height: 50px;
+        line-height: 40px;
+        position: absolute;
+        width: 50px;
+        padding-left: 5px;
+    }
+    background-color: #FFFFFF;
+    box-shadow: 4px 4px #737975;
+    font-size: 3em;
+    left: 50%;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+    /*margin-left: -28px;*/
+    text-align: center;
+    top: auto;
+    color: $text-color;
+    height: 80px;
+    line-height: 80px;
+    position: absolute;
+    width: 100px;
+    
+    &.left {
+        left: 15%;
+    }
+    &.left-math-signs {
+        left: 25%;
+    }
+    &.small {
+        @extend .element-small-width;
+    }
+    &.short {
+        @extend .element-short-height;
+    }
+    &.dropped {
+        background-color: rgba(0, 0, 0, 0);
+        box-shadow: none;
+        margin-left: 0;
+    }
+    &.no-left{
+        left: 0px;
+    }
+
+}
+
+.input-answer-holder {
+    margin-top: 25px;
+    &.no-float {
+        float: none ! important;
+    }
+    >div {
+        position: relative;
+        text-align: center;
+    }
+    .number-adjust {
+        border-style: solid;
+        height: 0;
+        left: 50%;
+        margin-left: -30px;
+        position: absolute;
+        width: 0;
+
+        &.number-adjust-up {
+            border-color: transparent transparent #737975;
+            border-width: 0 30px 20px;
+            top: -25px;
+        }
+        &.number-adjust-down {
+            border-color: #737975 transparent transparent;
+            border-width: 20px 30px 0;
+            top: 65px;
+        }
+    }
+    input {
+        @include transition(color, 0.3s, ease-in-out);
+        background-color: #ffffff;
+        border: 0 none;
+        color: $text-color-input;
+        font-family: SimplePrint,sans-serif;
+        font-size: 60px;
+        height: 60px;
+        padding: 12px 0 0;
+        text-align: center;
+        width: 60px;
+    }
+    &.input-borderbox {
+        input{
+            border: 1px solid #b2b5b4;
+            border-radius: 3px;
+        }
+    }
+    
+    &.margin-right {
+        margin-right: 50%;
+    }
+    &.padding-left {
+        padding-left: 50%;
+    }
+    &.margin-left {
+        margin-left: 50%;
+    }
+}
+
+.two-line-dots-answer{
+
+    &.number-dots[data-value='6'] > div:before {    
+        top:2%;
+        left:30%;
+        text-align: left;
+    }
+    &.number-dots[data-value='7'] > div:before {
+        top:2%;
+        left:23%;
+        text-align: left;
+    }
+    &.number-dots[data-value='8'] > div:before {
+        top:2%;
+        left:23%;
+        text-align: left;
+    }
+    &.number-dots[data-value='9'] > div:before {
+        top:2%;
+        left:16%;
+        text-align: left;
+    }
+    &.number-dots[data-value='10'] > div:before {               
+        top:2%;              
+        left:16%;
+        text-align: left;
+    }                 
+}
+
+.add-pricetag { 
+    div.pricetag{
+        background-color: #ffffff;
+        bottom: -15px;
+        color: $text-color;
+        font-size: 2em;
+        height: 40px;
+        left: 50%;
+        line-height: 40px;
+        margin-left: -50px;
+        position: absolute;
+        width: 100px;
+        z-index: 100;
+    }   
+}
+.add-pricetag-drag {
+    div.pricetag{
+        background-color: #ffffff;
+        bottom: -65px;
+        color: $text-color;
+        font-size: 1em;
+        height: 40px;
+        left: 50%;
+        line-height: 40px;
+        margin-left: -50px;
+        position: absolute;
+        width: 100px;
+        z-index: 100;
+    }
+    
+}
+.add-pricetag-drag-med {
+    div.pricetag{
+        background-color: #ffffff;
+        bottom: -28px;
+        color: $text-color;
+        font-size: 0.5em;
+        height: 35px;
+        left: 70%;
+        line-height: 40px;
+        margin-left: -50px;
+        position: absolute;
+        width: 60px;
+        z-index: 100;
+    }
+    
+}
+
+
+.clickbuttons-two {
+    
+    .click-button-holder {
+        width: 42.5%;
+        margin-left: 5%;
+        
+        >div {
+            width: 100%;
+            left: auto;
+            
+        }
+        
+        &.centered > div
+        {
+            left: 20% !important;
+        }
+    }
+}
+
+.exe-container-question  {
+    
+    &.margin-left {
+        margin-left: 20%;
+    }
+    &.margin-top {
+        margin-top: 40px;
+    }
+    
+    &.line-height {
+        line-height: 3;
+            
+    }
+    
+    &.padding-top-right {
+        padding-top: 10%;
+        padding-right: 20%;
+    }
+    &.margin-left-minus {
+        margin-left: -8%;
+    }
+    
+    > div {
+        &.pos-topleft { 
+            position: absolute;
+            /*    height: 34%;*/
+            left: 0;
+            top: 0;
+            width: 38.5%;
+        }
+   
+        &.pos-topright {
+            position: absolute;
+            /*    height: 34%;*/
+            left: 61.4%;
+            top: 0;
+            width: 38.5%;
+        }
+   
+        &.pos-bottomright {
+            position: absolute;
+            /*    height: 34%;*/
+            left: 61.4%;
+            top: 65.9%;
+            width: 38.5%;
+        }
+  
+        &.pos-bottomleft {
+            position: absolute;
+            /*    height: 34%;*/
+            left: 0;
+            top: 65.9%;
+            width: 38.5%;
+        }
+    
+        &.pos-center {
+            position: absolute;
+            /*    height: 34%;*/
+            left: 41.4%;
+            top: 34.4%;
+            width: 16.8%;
+        }
+    }
+    &.background-image {
+        background: url("../image/x-eq-backgr.png") no-repeat scroll 0 0 / 100% 100% rgba(0, 0, 0, 0);
+    }
+}
+
+.left-zero {
+    left: 0;
+}

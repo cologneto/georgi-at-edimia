@@ -1,0 +1,8 @@
+<div data-number="{{number}}" class="number_image_holder draggable stackable" style="left: auto; right: 10px; white-space: nowrap; top: {{topoffset}}px; overflow: hidden;">
+    <div style="width: 320px;">
+        <div class="drag_item_bgdiv" style="position: absolute; width: 100%; height: 100%;"></div>
+        {% for img in numberimages %}
+            {{ img }}
+        {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,62 @@
+1. getData
+- number of exercises
+
+2. Number image module - server side
+    - category - number_image, still, motion
+
+3. get exercise details from server with first load
+
+4. Code to optimize:
+A2 + A4 -> same code used for input box and arrows
+A3+4+5 - css
+
+A3 + A4 drag item template
+
+exercise.solve - some need to clear first
+
+
+.c0-5-A7 .answer-container[data-value='1'] > img.solution:nth-child(1) {
+    left: 51px; top: 31px;
+}
+.c0-5-A7 .answer-container[data-value='2'] > img.solution:nth-child(1) {
+    left: 26px; top: 12px;
+}
+.c0-5-A7 .answer-container[data-value='2'] > img.solution:nth-child(2) {
+    left: 24px; top: 50px;
+}
+.c0-5-A7 .answer-container[data-value='3'] >  img.solution:nth-child(1) {
+    left: 41px; top: 4px;
+}
+.c0-5-A7 .answer-container[data-value='3'] > img.solution:nth-child(2) {
+    left: 40px; top: 33px;
+}
+.c0-5-A7 .answer-container[data-value='3'] > img.solution:nth-child(3) {
+    left: 36px; top: 10px;
+}
+.c0-5-A7 .answer-container[data-value='4'] > img.solution:nth-child(1) {
+    left: 10px; top: 15px;
+}
+.c0-5-A7 .answer-container[data-value='4'] > img.solution:nth-child(2) {
+    left: 16px; top: 1px;
+}
+.c0-5-A7 .answer-container[data-value='4'] > img.solution:nth-child(3) {
+    left: 32px; top: 15px;
+}
+.c0-5-A7 .answer-container[data-value='4'] > img.solution:nth-child(4) {
+    left: 37px; top: 3px;
+}
+.c0-5-A7 .answer-container[data-value='5'] > img.solution:nth-child(1) {
+    left: 8px; top: 8px;
+}
+.c0-5-A7 .answer-container[data-value='5'] > img.solution:nth-child(2) {
+    left: 35px; top: 8px;
+}
+.c0-5-A7 .answer-container[data-value='5'] > img.solution:nth-child(3) {
+    left: -42px; top: 44px;
+}
+.c0-5-A7 .answer-container[data-value='5'] > img.solution:nth-child(4) {
+    left: 8px; top: 13px;
+}
+.c0-5-A7 .answer-container[data-value='5'] > img.solution:nth-child(5) {
+    left: 35px; top: 13px;
+}
